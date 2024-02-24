@@ -1,3 +1,5 @@
+// import { ModeToggle } from '@/components/ui/mode-toggle';
+
 export default function Home() {
-  return <div>Homepage</div>;
+  return <h1>cqscq</h1>;
 }
