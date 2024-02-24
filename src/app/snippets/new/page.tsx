@@ -5,26 +5,24 @@ import { Textarea } from '@/components/ui/textarea';
 
 export default function SnippetCreatePage() {
   return (
-    <form>
-      <h3 className="font-bold m-3">Create snippet</h3>
-      <div className="flex flex-col gap-4">
-        <div className="flex gap-4">
-          <Label className="w-12" htmlFor="title">
-            Title
-          </Label>
-          <Input name="title" type="text" placeholder="Title" />
-        </div>
-        <div className="flex gap-4">
-          <Label className="w-12" htmlFor="code">
-            Code
-          </Label>
-          <Textarea name="code" id="code" placeholder="code" />
-        </div>
+    <div className="min-w-96">
+      <form className="flex flex-col gap-4">
+        <h1 className="font-bold text-xl my-3">Create a Snippet</h1>
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-4">
+            <Label htmlFor="title">Title</Label>
+            <Input name="title" type="text" placeholder="Title" />
+          </div>
+          <div className="flex gap-4">
+            <Label htmlFor="code">Code</Label>
+            <Textarea name="code" id="code" placeholder="Code" />
+          </div>
 
-        <Button variant="destructive" type="submit">
-          Create
-        </Button>
-      </div>
-    </form>
+          <Button className="mt-3" variant="default" type="submit">
+            Create
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 }
