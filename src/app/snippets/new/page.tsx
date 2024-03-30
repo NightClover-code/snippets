@@ -35,11 +35,11 @@ export default function SnippetCreatePage() {
         <div className="flex flex-col gap-4">
           <div className="flex gap-4">
             <Label htmlFor="title">Title</Label>
-            <Input name="title" type="text" placeholder="Title" />
+            <Input name="title" type="text" placeholder="Title" required />
           </div>
           <div className="flex gap-4">
             <Label htmlFor="code">Code</Label>
-            <Textarea name="code" id="code" placeholder="Code" />
+            <Textarea name="code" id="code" placeholder="Code" required />
           </div>
 
           <Button className="mt-3" variant="default" type="submit">
