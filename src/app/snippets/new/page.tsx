@@ -29,7 +29,7 @@ export default function SnippetCreatePage() {
   };
 
   return (
-    <div className="min-w-96">
+    <div>
       <form action={createSnippet} className="flex flex-col gap-4">
         <h1 className="font-bold text-xl my-3">Create a Snippet</h1>
         <div className="flex flex-col gap-4">

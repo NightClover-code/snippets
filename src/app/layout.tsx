@@ -29,7 +29,7 @@ export default function RootLayout({
             <ModeToggle />
           </div>
           <main className="h-screen flex justify-center items-center">
-            {children}
+            <div className="min-w-[500px]">{children}</div>
           </main>
         </ThemeProvider>
       </body>

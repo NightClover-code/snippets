@@ -16,7 +16,7 @@ export default async function Home() {
   ));
 
   return (
-    <div className="min-w-[500px]">
+    <div>
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold">Snippets</h1>
         <Link href={`/snippets/new`}>
