@@ -6,6 +6,7 @@ import Editor from '@monaco-editor/react';
 import { Snippet } from '@prisma/client';
 import { useState } from 'react';
 import { Button } from './ui/button';
+import toast from 'react-hot-toast';
 
 interface SnippetEditFormProps {
   snippet: Snippet;
@@ -18,7 +19,19 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
     setCode(value);
   }
 
-  const editSnippetAction = actions.editSnippet.bind(null, snippet.id, code);
+  const editSnippetAction = async (snippetId: number, code: string) => {
+    await actions.editSnippet(snippetId, code);
+
+    try {
+      toast.success('Snippet updated successfully!');
+    } catch (error: any) {
+      toast.error(
+        error.message || 'An error occurred while updating the snippet.'
+      );
+    }
+  };
+
+  const editSnippetActionBound = editSnippetAction.bind(null, snippet.id, code);
 
   return (
     <div className="rounded-lg overflow-hidden">
@@ -41,7 +54,7 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
           onChange={handleEditorChange}
         />
       </Resizable>
-      <form action={editSnippetAction}>
+      <form action={editSnippetActionBound}>
         <Button className="mt-3 w-full" variant="default" type="submit">
           Save
         </Button>
