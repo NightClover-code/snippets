@@ -111,6 +111,16 @@ Start the app
 yarn dev
 ```
 
+## Contributing 👥
+
+The project is open-source, providing a robust template for developers eager to expand its functionality over time.
+
+To contribute, please visit the issues section on GitHub.
+
+After addressing an issue, submit a Pull Request (PR).
+
+I'll review submissions promptly and respond as quickly as possible.
+
 ## Deployment 🚀
 
 - Client deployed on [Vercel](https://vercel.com/)
@@ -118,10 +128,10 @@ yarn dev
 
 ## Inspiration & credits ☄️
 
-- [@StephenGrider](hhttps://github.com/StephenGrider) - Project Idea
+- [@StephenGrider](https://github.com/StephenGrider) - Project Idea
 
 ## Author
 
-- [@achrafdev](https://achrafdev.com)
+- [@achrafdev](https://twitter.com/achrafdevx)
 
 **Thanks for sharing** 🚀
