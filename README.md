@@ -105,6 +105,8 @@ Add Environment Variables
   - `DATABASE_URL`
 </details>
 
+Prisma's guide to PostgreSQL connection: [Prisma Docs](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-postgresql)
+
 Start the app
 
 ```bash
