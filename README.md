@@ -105,7 +105,13 @@ Add Environment Variables
   - `DATABASE_URL`
 </details>
 
-Prisma's guide to PostgreSQL connection: [Prisma Docs](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-postgresql)
+Setup a local DB
+
+- I used Docker to setup Postgres in my machine (Windows 11).
+
+- After setting up the database, make sure you hook it up to prisma.
+
+- Prisma's guide to PostgreSQL connection: [Prisma Docs](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-postgresql)
 
 Start the app
 
