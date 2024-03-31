@@ -1,6 +1,6 @@
 # Snippet - Code Snippet App w/ Next.js, Prisma and PostgreSQL
 
-<!-- ![Snippet Manager preview image](./public/preview.png) -->
+![Snippet Manager preview image](./public/preview.gif)
 
 ## The Challenge ⚡️
 
