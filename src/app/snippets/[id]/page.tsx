@@ -1,10 +1,9 @@
 import * as actions from '@/actions';
-import { notFound } from 'next/navigation';
-import { db } from '@/db';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import nightOwl from 'react-syntax-highlighter/dist/esm/styles/prism/night-owl';
+import SnippetDeleteForm from '@/components/snippet-delete-form';
 
 interface SnippetShowPageProps {
   params: {
@@ -18,17 +17,7 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
 
   const snippetId = parseInt(props.params.id);
 
-  const snippet = await db.snippet.findFirst({
-    where: {
-      id: snippetId,
-    },
-  });
-
-  if (!snippet) {
-    return notFound();
-  }
-
-  const deleteSnippetActionBound = actions.deleteSnippet.bind(null, snippet.id);
+  const snippet = await actions.getSnippet(snippetId);
 
   return (
     <div>
@@ -40,11 +29,7 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
               Edit
             </Button>
           </Link>
-          <form action={deleteSnippetActionBound}>
-            <Button variant="destructive" type="submit">
-              Delete
-            </Button>
-          </form>
+          <SnippetDeleteForm snippetId={snippet.id} />
         </div>
       </div>
       <div className="mt-8 rounded-8 overflow-hidden">

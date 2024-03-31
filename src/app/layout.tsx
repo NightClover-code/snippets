@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { Toaster } from 'react-hot-toast';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,12 +29,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="toggle-container float-right m-5">
-            <ModeToggle />
+          <div className="p-5 h-screen">
+            <div className="flex justify-between items-center">
+              <Link href="/">
+                <h1 className="text-xl font-bold">Home</h1>
+              </Link>
+              <ModeToggle />
+            </div>
+            <main className="flex justify-center items-center h-full">
+              <div className="min-w-[500px]">{children}</div>
+            </main>
           </div>
-          <main className="h-screen flex justify-center items-center">
-            <div className="min-w-[500px]">{children}</div>
-          </main>
         </ThemeProvider>
       </body>
     </html>

@@ -1,7 +1,35 @@
 'use server';
 
 import { db } from '@/db';
-import { redirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
+
+export async function createSnippet(formData: FormData) {
+  const title = formData.get('title') as string;
+  const code = formData.get('code') as string;
+
+  await db.snippet.create({
+    data: {
+      title,
+      code,
+    },
+  });
+
+  redirect('/');
+}
+
+export async function getSnippet(id: number) {
+  const snippet = await db.snippet.findFirst({
+    where: {
+      id,
+    },
+  });
+
+  if (!snippet) {
+    return notFound();
+  }
+
+  return snippet;
+}
 
 export async function editSnippet(id: number, code: string) {
   await db.snippet.update({
