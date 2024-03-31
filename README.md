@@ -4,7 +4,7 @@
 
 ## The Challenge ⚡️
 
-I wanted to finally build an app with Next.js 14, to see if it deserves all the hype.
+I wanted to build a beginner-friendly Next.js app to help aspiring developers get started with open-source.
 
 This is a very small project as of now, and any contributions will be highly appreciated.
 
