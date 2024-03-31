@@ -125,6 +125,8 @@ The project is open-source, providing a robust template for developers eager to 
 
 To contribute, please visit the [issues](https://github.com/NightClover-code/snippets/issues) section on GitHub.
 
+You can also open issues on your own, and please make sure they're as descriptive as possible. 
+
 After addressing an issue, submit a Pull Request (PR).
 
 I'll review submissions promptly and respond as quickly as possible.
