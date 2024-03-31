@@ -34,7 +34,7 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
   const editSnippetActionBound = editSnippetAction.bind(null, snippet.id, code);
 
   return (
-    <div className="rounded-lg overflow-hidden">
+    <div className="rounded-lg overflow-hidden min-w-[600px]">
       <Resizable
         defaultSize={{
           width: '100%',
@@ -49,7 +49,7 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
           defaultValue={snippet.code}
           options={{
             minimap: { enabled: false },
-            fontSize: 20,
+            fontSize: 16,
           }}
           onChange={handleEditorChange}
         />

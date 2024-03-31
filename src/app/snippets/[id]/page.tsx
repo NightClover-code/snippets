@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { db } from '@/db';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import toast from 'react-hot-toast';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import nightOwl from 'react-syntax-highlighter/dist/esm/styles/prism/night-owl';
 
 interface SnippetShowPageProps {
   params: {
@@ -27,20 +28,7 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
     return notFound();
   }
 
-  const deleteSnippetAction = async (snippetId: number) => {
-    'use server';
-    await actions.deleteSnippet(snippetId);
-
-    try {
-      toast.success('Snippet deleted successfully!');
-    } catch (error: any) {
-      toast.error(
-        error.message || 'An error occurred while deleting the snippet.'
-      );
-    }
-  };
-
-  const deleteSnippetActionBound = deleteSnippetAction.bind(null, snippet.id);
+  const deleteSnippetActionBound = actions.deleteSnippet.bind(null, snippet.id);
 
   return (
     <div>
@@ -59,8 +47,10 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
           </form>
         </div>
       </div>
-      <div className="flex gap-4 flex-col mt-8 bg-black rounded-8 p-4">
-        {snippet.code}
+      <div className="mt-8 rounded-8 overflow-hidden">
+        <SyntaxHighlighter language="javascript" style={nightOwl}>
+          {snippet.code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );

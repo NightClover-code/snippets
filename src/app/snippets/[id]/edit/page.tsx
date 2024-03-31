@@ -23,7 +23,10 @@ export default async function SnippetEditPage(props: SnippetEditPageProps) {
 
   return (
     <div>
-      <SnippetEditForm snippet={snippet} />
+      <h1 className="text-xl font-bold">Editing snippet #{snippet.id}</h1>
+      <div className="mt-4">
+        <SnippetEditForm snippet={snippet} />
+      </div>
     </div>
   );
 }
