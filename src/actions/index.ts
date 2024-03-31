@@ -3,10 +3,7 @@
 import { db } from '@/db';
 import { notFound, redirect } from 'next/navigation';
 
-export async function createSnippet(formData: FormData) {
-  const title = formData.get('title') as string;
-  const code = formData.get('code') as string;
-
+export async function createSnippet(title: string, code: string) {
   await db.snippet.create({
     data: {
       title,
