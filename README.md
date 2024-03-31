@@ -1,4 +1,4 @@
-# Snippet - Code Snippet App w/ Next.js, Prisma and PostgreSQL
+# Snippets - Code Snippet App w/ Next.js, Prisma and PostgreSQL
 
 ![Snippet Manager preview image](./public/preview.gif)
 
@@ -107,9 +107,9 @@ Add Environment Variables
 
 Setup a local DB
 
-- I used Docker to setup Postgres in my machine (Windows 11).
+- I used Docker to set up Postgres on my machine (Windows 11).
 
-- After setting up the database, make sure you hook it up to prisma.
+- After setting up the database, make sure you hook it up to Prisma.
 
 - Prisma's guide to PostgreSQL connection: [Prisma Docs](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-postgresql)
 
@@ -123,7 +123,7 @@ yarn dev
 
 The project is open-source, providing a robust template for developers eager to expand its functionality over time.
 
-To contribute, please visit the issues section on GitHub.
+To contribute, please visit the [issues](https://github.com/NightClover-code/snippets/issues) section on GitHub.
 
 After addressing an issue, submit a Pull Request (PR).
 
