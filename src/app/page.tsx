@@ -1,19 +1,10 @@
 import Link from 'next/link';
-import { db } from '@/db';
 import { Button } from '@/components/ui/button';
+import * as actions from '@/actions';
+import SnippetList from '@/components/snippet-list';
 
 export default async function Home() {
-  const snippets = await db.snippet.findMany();
-
-  const renderedSnippets = snippets.map(({ id, code, title }) => (
-    <Link
-      href={`/snippets/${id}`}
-      key={id}
-      className="flex justify-between items-center p-4 border border-gray-200 rounded-md shadow-sm hover:shadow-md transition duration-200 ease-in-out"
-    >
-      <div>{title}</div>
-    </Link>
-  ));
+  const snippets = await actions.getSnippets();
 
   return (
     <div>
@@ -25,7 +16,7 @@ export default async function Home() {
           </Button>
         </Link>
       </div>
-      <div className="flex gap-4 flex-col mt-8">{renderedSnippets}</div>
+      <SnippetList snippets={snippets} />
     </div>
   );
 }

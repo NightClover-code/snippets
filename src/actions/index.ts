@@ -3,6 +3,10 @@
 import { db } from '@/db';
 import { notFound, redirect } from 'next/navigation';
 
+export async function getSnippets() {
+  return await db.snippet.findMany();
+}
+
 export async function createSnippet(title: string, code: string) {
   await db.snippet.create({
     data: {
