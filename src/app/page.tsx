@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import * as actions from '@/actions';
 import SnippetList from '@/components/snippet-list';
 
-export const dynamic = 'force-dynamic';
-
 export default async function Home() {
   const snippets = await actions.getSnippets();
 
