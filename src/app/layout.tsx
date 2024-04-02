@@ -37,7 +37,7 @@ export default function RootLayout({
               <ModeToggle />
             </div>
             <main className="flex justify-center items-center h-full">
-              <div className="min-w-[500px]">{children}</div>
+              <div className="w-full sm:max-w-[500px]">{children}</div>
             </main>
           </div>
         </ThemeProvider>
